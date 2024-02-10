@@ -4,6 +4,7 @@ import Logo from "../components/icons/logo";
 import GoogleLogo from "../../public/google.svg"
 import Button from "../components/Button";
 import { Inter } from "next/font/google";
+import React, { useState } from 'react';
 
 import axios from "axios";
 import { VERIFY_USER } from "../constants/api"
@@ -13,20 +14,22 @@ const inter = Inter({ subsets: ["latin"] });
 const SignUp = () => {
 
     const postAuthenticate = async (tokenResponse : TokenResponse) => {
-        console.log("Token Response: ", tokenResponse)
-        console.log("Axios target: ", VERIFY_USER)
+        console.log("Token Response: ", tokenResponse);
+        console.log("Axios target: ", VERIFY_USER);
         
         const userInfo = await axios.post(VERIFY_USER, {
             accessToken: tokenResponse.access_token
         }).then((res) => {
-            const authToken = res.headers['authorization'];
+            const authToken : string = res.headers['authorization'];
             console.log("Axios success, storing Auth Token: ", authToken);
+            const [jwtToken, setJwtToken] = useState<string>(authToken);
+
             localStorage.setItem('authToken', authToken);
             return res.data;
         })
         
-        localStorage.setItem('userInfo', JSON.stringify(userInfo))
-        window.location.href = "/";
+        localStorage.setItem('userInfo', JSON.stringify(userInfo));
+        //window.location.href = "/";
     }
 
     const loginWithGoogle = useGoogleLogin({
