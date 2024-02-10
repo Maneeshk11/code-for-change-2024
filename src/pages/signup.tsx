@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Logo from "./components/icons/logo";
+import Logo from "../components/icons/logo";
 import GoogleLogo from "../../public/google.svg"
-import Button from "./components/Button";
+import Button from "../components/Button";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });

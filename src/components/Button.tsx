@@ -12,7 +12,7 @@ interface ButtonProps {
 
 const Button: FC<ButtonProps> = ({ title, src, classname, children, onClick }) => {
     return (
-        <Link href={"#"} className={`${classname}`} onClick={onClick}>
+        <Link href={src} className={`${classname}`} onClick={onClick}>
             <button className = {`text-xl py-2 px-3 border-2 rounded-xl border-gray-600 hover:bg-gray-800 ${classname}`}>{children}{title}</button>
         </Link>
 
