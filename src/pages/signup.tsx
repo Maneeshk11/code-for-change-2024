@@ -1,4 +1,4 @@
-import { CredentialResponse, GoogleLogin, TokenResponse, useGoogleLogin } from "@react-oauth/google"
+import { TokenResponse, useGoogleLogin } from "@react-oauth/google"
 import Image from "next/image";
 import Logo from "../components/icons/logo";
 import GoogleLogo from "../../public/google.svg"
@@ -54,13 +54,8 @@ const SignUp = () => {
                 <Button src="#" title="Continue with Google" classname="flex flex-row items-center justify-center gap-x-2 w-full"
                         onClick={loginWithGoogle}>
                         <Image src={GoogleLogo} alt="google" />
-                        {/* Continue with Google */}
-                    </Button>
-               
-                {/* <div className="flex flex-row gap-x-2">
-                    <h2>Don&apos;t have an account?</h2>
-                    <a href="" className="font-bold">Sign up</a>
-                </div> */}
+                        { }
+                </Button>
             </div>
         </div>
     );
