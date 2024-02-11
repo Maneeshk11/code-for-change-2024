@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import PromptComp from "./PromptComp"
 import SelectRestaurant from "./SelectRestaurant"
+import ResultComp from "../../pages/result"
 
 
 const ContentPage = () => {
@@ -33,6 +34,7 @@ const ContentPage = () => {
         <div style={{ top: top }} className={`w-screen ${top} absolute transform duration-300 ease-in`}>
             <SelectRestaurant setMovement={setMovement} />
             <PromptComp setMovement={setMovement} />
+            <ResultComp setMovement={setMovement}/>
         </div>
     )
 
